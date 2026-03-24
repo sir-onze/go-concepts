@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "mini-platform/proto";
+
+// a message is like a struct
+message StoreRequest {
+  string id = 1;
+  string data = 2;
+}
+
+message StoreResponse {
+  bool success = 1;
+}
+// a service defines the RPC methods
+service StoreService {
+    rpc Store (StoreRequest) returns (StoreResponse);
+}
